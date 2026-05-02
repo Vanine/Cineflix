@@ -56,7 +56,3 @@ Cineflix/
 ## Configuration
 
 Set the TMDB v4 bearer token via `EXPO_PUBLIC_TMDB_BEARER_TOKEN`. It is exposed to Swift through the auto-generated `Config.swift`.
-
-## Screenshots
-
-_Add screenshots of Home, Search, Details, Trailer, and Favorites here._

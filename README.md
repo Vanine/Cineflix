@@ -2,6 +2,12 @@
 
 A Netflix-style movie browsing iOS app built with SwiftUI and powered by [TMDB](https://www.themoviedb.org/).
 
+## Screenshots
+
+| Home | Search | Movie Details | Trailer Player | Favorites |
+| :---: | :---: | :---: | :---: | :---: |
+| <img src="screenshots/home.png" width="200"/> | <img src="screenshots/search.png" width="200"/> | <img src="screenshots/details.png" width="200"/> | <img src="screenshots/player.png" width="200"/> | <img src="screenshots/favorites.png" width="200"/> |
+
 ## Architecture
 
 **MVVM + Coordinator (Router)**
@@ -27,7 +33,6 @@ Cineflix/
 - **Movie Details** — Backdrop with gradient, rating, overview, similar movies, favorite toggle, trailer playback.
 - **Trailer Player** — `WKWebView` embedding `youtube.com/embed/{key}`, full-screen modal, loading + error handling.
 - **Favorites** — Persisted with **SwiftData** (`@Model FavoriteMovie`), grid view with context-menu remove.
-- **Recently Viewed** — Persisted in `UserDefaults`, surfaced on Home.
 - **Offline-friendly cache** — In-memory page cache that returns stale data when the network fails.
 - **Image loader** — Actor-based loader with in-flight de-duplication, memory + URLCache backing.
 - **Pull-to-refresh** everywhere it makes sense.

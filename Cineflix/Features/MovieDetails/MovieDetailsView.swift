@@ -56,6 +56,7 @@ struct MovieDetailsView: View {
                 RemoteImageView(url: viewModel.movie.backdropURL ?? viewModel.movie.posterURL)
                     .allowsHitTesting(false)
             }
+            .clipped()
             .overlay {
                 LinearGradient(
                     colors: [
@@ -89,6 +90,8 @@ struct MovieDetailsView: View {
                 .padding(.horizontal, DesignSystem.Spacing.md)
                 .padding(.bottom, DesignSystem.Spacing.md)
             }
+            .frame(maxWidth: .infinity)
+            .clipped()
     }
 
     private var actionRow: some View {

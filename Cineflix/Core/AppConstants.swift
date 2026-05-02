@@ -9,11 +9,11 @@ import Foundation
 
 nonisolated enum AppConstants {
     enum API {
+        static let bearerToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMzQxNmZhNWViNjNiMTE5ZmNlMTkxOGViYzIzNDI0YiIsIm5iZiI6MTc3NzQ5NDM4MS40MDksInN1YiI6IjY5ZjI2OTZkNzk0MGEzOGY0MDdiZWY3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eg_2v1edwso_rMXDDsf5FjGOpzKppDKqMXOq3YKpnJs"
         static let host: String = "api.themoviedb.org"
         static let basePath: String = "/3"
         static let imageBaseURL: String = "https://image.tmdb.org/t/p"
         static let youTubeEmbedBaseURL: String = "https://www.youtube.com/embed"
-        static let bearerToken: String = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMzQxNmZhNWViNjNiMTE5ZmNlMTkxOGViYzIzNDI0YiIsIm5iZiI6MTc3NzQ5NDM4MS40MDksInN1YiI6IjY5ZjI2OTZkNzk0MGEzOGY0MDdiZWY3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eg_2v1edwso_rMXDDsf5FjGOpzKppDKqMXOq3YKpnJs"
     }
 
     enum Image {

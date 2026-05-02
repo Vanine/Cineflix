@@ -62,14 +62,17 @@ struct SearchView: View {
                 message: "We couldn't find anything matching “\(viewModel.query)”. Try another search."
             )
         default:
-            resultsGrid
+            VStack(spacing: 0) {
+                SearchSortBar(selection: $viewModel.sortOption)
+                resultsGrid
+            }
         }
     }
 
     private var resultsGrid: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: DesignSystem.Spacing.md) {
-                ForEach(viewModel.results) { movie in
+                ForEach(viewModel.sortedResults) { movie in
                     Button {
                         router.push(.movieDetails(movie))
                     } label: {
@@ -81,6 +84,7 @@ struct SearchView: View {
             }
             .padding(.horizontal, DesignSystem.Spacing.md)
             .padding(.bottom, DesignSystem.Spacing.xl)
+            .animation(.spring(response: 0.45, dampingFraction: 0.85), value: viewModel.sortOption)
         }
     }
 

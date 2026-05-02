@@ -11,8 +11,28 @@ import Combine
 @MainActor
 final class SearchViewModel: ObservableObject {
     @Published var query: String = ""
+    @Published var sortOption: SearchSortOption = .relevance
     @Published private(set) var results: [Movie] = []
     @Published private(set) var state: LoadState = .idle
+
+    var sortedResults: [Movie] {
+        switch sortOption {
+        case .relevance:
+            return results
+        case .ratingDesc:
+            return results.sorted { ($0.voteAverage ?? -1) > ($1.voteAverage ?? -1) }
+        case .releaseDateDesc:
+            return results.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+        case .releaseDateAsc:
+            return results.sorted {
+                let a = $0.releaseDate ?? ""
+                let b = $1.releaseDate ?? ""
+                if a.isEmpty { return false }
+                if b.isEmpty { return true }
+                return a < b
+            }
+        }
+    }
 
     private var page = 1
     private var totalPages = 1

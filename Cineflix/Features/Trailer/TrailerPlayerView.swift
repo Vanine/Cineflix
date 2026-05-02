@@ -43,7 +43,7 @@ struct TrailerPlayerView: View {
                 }
             }
         }
-        .overlay(alignment: .topTrailing) {
+        .overlay(alignment: .topLeading) {
             Button {
                 dismiss()
             } label: {
@@ -51,10 +51,10 @@ struct TrailerPlayerView: View {
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(.white)
                     .frame(width: 36, height: 36)
-                    .background(.black.opacity(0.5), in: .circle)
+                    .background(.black.opacity(0.55), in: .circle)
             }
             .padding(.top, DesignSystem.Spacing.md)
-            .padding(.trailing, DesignSystem.Spacing.md)
+            .padding(.leading, DesignSystem.Spacing.md)
         }
     }
 }
@@ -94,7 +94,7 @@ private struct YouTubePlayerWebView: UIViewRepresentable {
         </body>
         </html>
         """
-        webView.loadHTMLString(html, baseURL: URL(string: "https://www.youtube.com"))
+        webView.loadHTMLString(html, baseURL: URL(string: "https://www.youtube-nocookie.com"))
         return webView
     }
 
